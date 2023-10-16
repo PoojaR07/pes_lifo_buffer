@@ -4,14 +4,16 @@
 
 ## TABLE OF CONTENT
 
-I. [**Introduction to LIFO Buffer**] 
+I. [**Introduction to LIFO Buffer**](#i-introduction) 
 
-II. [**RTL Design and Synthesis**] 
+II. [**RTL Design and Synthesis**](#ii-rtl-design-and-synthesis)  
   1. [Icarus Verilog (iverilog) & Yosys Installation on Ubuntu](#1-icarus-verilog-iverilog--yosys-installation-on-ubuntu)
-  2. [RTL Pre-Simulation]
-  3. [Synthesis]
-  4. [GLS Post-simulation]
-     
+  2. [RTL Pre-Simulation](#rtl-pre-simulation)  
+  3. [Synthesis](#icg---synthesis)  
+  4. [GLS Post-simulation](#gls-post-simulation)
+
+## **I. Introduction**   
+
 ## **II. RTL Design and Synthesis**
 
 ### **1. Icarus Verilog (iverilog) & Yosys Installation on Ubuntu**
@@ -41,3 +43,19 @@ $ sudo apt-get install iverilog gtkwave
  $ sudo make install
 
  ```
+
+## RTL Pre-Simulation
+
+Verification of the design is done at two points. First, it is applied to the initial verilog design. This process is called the Register Transfer Level (RTL) simulation. This verifies only the logic without delays. The input to this verification process is a test bench written in verilog.
+To simulate and run the verilog, enter the following command in your terminal.
+```
+$ iverilog iiitb_lifo.v iiitb_lifo_tb.v
+$ ./a.out
+```
+For pre-synthesis waveform:
+```
+$ gtkwave iiitb_lifo_out.vcd
+```
+![Screenshot from 2023-10-14 22-23-41](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/59b1ba9e-51d6-4ba3-8d90-e7d53d19e990)
+
+## ICG - Synthesis
