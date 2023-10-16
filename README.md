@@ -7,7 +7,7 @@
 I. [**Introduction to LIFO Buffer**] 
 
 II. [**RTL Design and Synthesis**] 
-  1. [Icarus Verilog (iverilog) & Yosys Installation on Ubuntu](###Icarus-Verilog-(iverilog)-&-Yosys-Installation-on-Ubuntu)
+  1. [Icarus Verilog (iverilog) & Yosys Installation on Ubuntu](#1-icarus-verilog-iverilog--yosys-installation-on-ubuntu)
   2. [RTL Pre-Simulation]
   3. [Synthesis]
   4. [GLS Post-simulation]
