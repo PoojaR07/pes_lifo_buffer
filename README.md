@@ -14,6 +14,13 @@ II. [**RTL Design and Synthesis**](#ii-rtl-design-and-synthesis)
 
 ## **I. Introduction**   
 
+LIFO is an abbreviation for last in, first out. It is a method for handling data structures where the first element is processed last and the last element is processed first.The LIFO data structure can be referred to as a stack, but not be confused with the processor stack. The LIFO differs from the processor stack because it adds and removes data of the same type, whereas the stack on the processor adds or removes different types of data depending on the type of calling convention or function. In terms of memory, this buffer usually is implemented in an array-like format but it is not an array. LIFO buffers are a contiguous piece of memory that require special methods to add and remove data. 
+
+### **Reference circuit diagram**
+
+![Verilog Module](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/c7fae8e9-5736-4fe0-a052-0cebfc68e676)
+
+
 ## **II. RTL Design and Synthesis**
 
 ### **1. Icarus Verilog (iverilog) & Yosys Installation on Ubuntu**
