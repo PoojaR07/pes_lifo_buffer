@@ -68,9 +68,10 @@ $ gtkwave iiitb_lifo_out.vcd
 ## Synthesis
 
 1. Invoke yosys
-   ![Screenshot from 2023-10-14 22-31-19](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/70b0e2ec-0ee2-4af9-a0a5-80ddec38f6db)
-
    
+![Screenshot from 2023-10-14 22-31-19](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/70b0e2ec-0ee2-4af9-a0a5-80ddec38f6db)
+
+
 ```
 // reads the library file from sky130//
 
