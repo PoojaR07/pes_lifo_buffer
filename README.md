@@ -10,7 +10,7 @@ II. [**RTL Design and Synthesis**](#ii-rtl-design-and-synthesis)
   1. [Icarus Verilog (iverilog) & Yosys Installation on Ubuntu](#1-icarus-verilog-iverilog--yosys-installation-on-ubuntu)
   2. [RTL Pre-Simulation](#rtl-pre-simulation)  
   3. [Synthesis](#synthesis)  
-  4. [GLS Post-simulation](#gls-post-simulation)
+  4. [Gate Level simulation](#gate-level-simulation)
 
 ## **I. Introduction**   
 
@@ -116,6 +116,23 @@ yosys> flatten
 
 yosys> show
 ```
+```
+//Writing Netlist//
+
+yosys>write_verilog -noattr iiitb_lifo_net.v
+```
+
 **Synthesized Circuit**
 
 ![Screenshot from 2023-10-15 12-26-56](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/44771816-bf90-415f-807a-99a443ccd7b5)
+
+## Gate Level Simulation
+
+```
+$ iverilog -DFUNCTIONAL -DUNIT_DELAY=#1 verilog_files/primitives.v verilog_files.v/sky130_fd_sc_hd.v lifo_net.v lifo_tb.v
+$ ./a.out
+```
+For post-synthesis waveform:
+```
+$ gtkwave lifo_out.vcd
+```
