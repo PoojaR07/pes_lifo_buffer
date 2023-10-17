@@ -109,7 +109,8 @@ yosys> stat
 
 yosys> flatten
 ```
-![Screenshot from 2023-10-14 22-40-28](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/710ed24f-da68-4ac0-a65b-015ee1e42ca9)
+![Screenshot from 2023-10-15 12-28-11](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/93ee2b1c-ffaf-47f9-91bb-6e7072e6d02d)
+
 
 ```
 //Displays the Netlist circuit//
