@@ -9,7 +9,7 @@ I. [**Introduction to LIFO Buffer**](#i-introduction)
 II. [**RTL Design and Synthesis**](#ii-rtl-design-and-synthesis)  
   1. [Icarus Verilog (iverilog) & Yosys Installation on Ubuntu](#1-icarus-verilog-iverilog--yosys-installation-on-ubuntu)
   2. [RTL Pre-Simulation](#rtl-pre-simulation)  
-  3. [Synthesis](#icg---synthesis)  
+  3. [Synthesis](#synthesis)  
   4. [GLS Post-simulation](#gls-post-simulation)
 
 ## **I. Introduction**   
@@ -65,4 +65,56 @@ $ gtkwave iiitb_lifo_out.vcd
 ```
 ![Screenshot from 2023-10-14 22-23-41](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/59b1ba9e-51d6-4ba3-8d90-e7d53d19e990)
 
-## ICG - Synthesis
+## Synthesis
+
+1. Invoke yosys
+   ![Screenshot from 2023-10-14 22-31-19](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/70b0e2ec-0ee2-4af9-a0a5-80ddec38f6db)
+
+   
+```
+// reads the library file from sky130//
+
+yosys> read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+
+```
+// reads the verilog files//
+
+yosys> read_verilog lifo.v
+```
+
+```
+//synthesize the top module of verilog file//  
+
+yosys> synth -top lifo
+```
+
+```
+//map the FF library file//
+
+yosys> dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+```
+
+```
+//Generates netlist//
+
+yosys> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+yosys> stat
+```
+
+```
+//Simplified netlist//
+
+yosys> flatten
+```
+![Screenshot from 2023-10-14 22-40-28](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/710ed24f-da68-4ac0-a65b-015ee1e42ca9)
+
+```
+//Displays the Netlist circuit//
+
+yosys> show
+```
+**Synthesized Circuit**
+
+![Screenshot from 2023-10-15 12-26-56](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/44771816-bf90-415f-807a-99a443ccd7b5)
