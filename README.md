@@ -138,3 +138,5 @@ For post-synthesis waveform:
 $ gtkwave lifo_out.vcd
 ```
 
+![Screenshot from 2023-10-15 12-26-60](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/54fbe46b-db5d-42fb-b746-7c8ab6ca5393)
+
