@@ -130,7 +130,7 @@ yosys>write_verilog -noattr iiitb_lifo_net.v
 ## Gate Level Simulation
 
 ```
-$ iverilog -DFUNCTIONAL -DUNIT_DELAY=#1 verilog_files/primitives.v verilog_files/sky130_fd_sc_hd.v lifo_net.v lifo_tb.v
+$ iverilog -DFUNCTIONAL -DUNIT_DELAY=#1 primitives.v sky130_fd_sc_hd.v lifo_net.v lifo_tb.v
 $ ./a.out
 ```
 For post-synthesis waveform:
