@@ -13,8 +13,8 @@ II. [**RTL Design and Synthesis**](#ii-rtl-design-and-synthesis)
   4. [Gate Level simulation](#gate-level-simulation)
      
 III. [**PHYSICAL DESIGN FROM NETLIST TO GDSII**](#iii-physical-design-from-netlist-to-gdsii)
-  1. Invoke OpenLane(#invoke-openlane)
-  2. Synthesis
+  1. [Invoke OpenLane](#invoke-openlane)
+  2. [Synthesis](#synthesis)
   3. Floorplan
   4. Placement
   5. CTS
