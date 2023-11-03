@@ -189,7 +189,7 @@ $ magic -T /home/poojar/OpenLane/vsdstdcelldesign/libs/sky130A.tech lef read /ho
 
 ![Screenshot from 2023-11-03 13-15-20](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/eaa896f6-3d02-467c-aa60-2bf83f94f149)
 
-Reports Generated
+#### **Reports Generated**
 
 ![Screenshot from 2023-11-03 13-22-23](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/95b739e1-1c20-4f38-8ac9-4eae18d54ed3)
 
@@ -203,7 +203,19 @@ Reports Generated
 
 ![Screenshot from 2023-11-03 13-32-09](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/14c00ea5-ed40-44ae-b9d2-9eb6d3df27ae)
 
-Power report
+#### **Power Report**
+
+![Screenshot from 2023-11-03 18-40-02](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/402dd33a-66ca-4168-8e13-84d2095cd0cf)
+
+Skew Report
+
+![Screenshot from 2023-11-03 18-40-21](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/0afe9cee-eedb-460d-8f3a-344ff2671bd6)
+
+![Screenshot from 2023-11-03 18-40-47](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/87025a9c-df60-4692-81dd-864631788c71)
+
+#### **Area Report**
+
+![Screenshot from 2023-11-03 18-41-11](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/2a22fb80-e8c2-4eab-94dd-1b67fae247a9)
 
 
 ### **6. Routing**
