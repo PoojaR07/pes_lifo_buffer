@@ -15,7 +15,7 @@ II. [**RTL Design and Synthesis**](#ii-rtl-design-and-synthesis)
 III. [**PHYSICAL DESIGN FROM NETLIST TO GDSII**](#iii-physical-design-from-netlist-to-gdsii)
   1. [Invoke OpenLane](#1-invoke-openlane)
   2. [Synthesis](#2-synthesis)
-  3. Floorplan
+  3. [Floorplan](#3-floorplan)
   4. Placement
   5. CTS
 
@@ -156,3 +156,18 @@ $ gtkwave lifo_out.vcd
 ### **2. Synthesis**
 
 ![Screenshot from 2023-11-03 12-59-04](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/ade10fd3-09bb-4b9e-bfbf-aba48c41d906)
+
+Area Report
+
+![Screenshot from 2023-11-03 14-30-19](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/3249fb03-e079-4466-a5b5-02e5f21d8068)
+
+### ***3. Floorplan**
+
+![Screenshot from 2023-11-03 12-59-24](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/17c94031-0316-479a-9633-0a312b04a978)
+
+```
+$ magic -T /home/poojar/OpenLane/vsdstdcelldesign/libs/sky130A.tech lef read /home/poojar/OpenLane/LIFO/runs/RUN_2023.11.03_07.14.55/tmp/merged.max.lef def lifo.def &
+```
+![Screenshot from 2023-11-03 13-04-15](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/6eb03eea-0ec8-491c-a39c-1d8ad2e2b88a)
+
+![Screenshot from 2023-11-03 13-04-37](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/4e37b749-c731-413e-a825-4dbafebc4282)
