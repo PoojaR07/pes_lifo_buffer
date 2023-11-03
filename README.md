@@ -13,12 +13,13 @@ II. [**RTL Design and Synthesis**](#ii-rtl-design-and-synthesis)
   4. [Gate Level simulation](#gate-level-simulation)
      
 III. [**PHYSICAL DESIGN FROM NETLIST TO GDSII**](#iii-physical-design-from-netlist-to-gdsii)
-  1. [Invoke OpenLane](#1-invoke-openlane)
-  2. [Synthesis](#2-synthesis)
-  3. [Floorplan](#3-floorplan)
-  4. [Placement](#4-placement)
-  5. [CTS](#5-CTS)
-  6. [Routing](#6-routing)
+  1. [Installation of ngspice magic and OpenLane](#1-installation-of-ngspice-magic-and-openlane) 
+  2. [Invoke OpenLane](#2-invoke-openlane)
+  3. [Synthesis](#3-synthesis)
+  4. [Floorplan](#4-floorplan)
+  5. [Placement](#5-placement)
+  6. [CTS](#6-CTS)
+  7. [Routing](#7-routing)
 
 ## **I. Introduction**   
 
@@ -150,11 +151,72 @@ $ gtkwave lifo_out.vcd
 
 ## **III. Physical Design from Netlist to GDSII**
 
-### **1. Invoke Openlane**
+### **1. Installation of ngspice magic and OpenLane**
+
+**ngspice**
+- Download the tarball from https://sourceforge.net/projects/ngspice/files/ to a local directory
+```
+cd $HOME
+sudo apt-get install libxaw7-dev
+tar -zxvf ngspice-41.tar.gz
+cd ngspice-41
+mkdir release
+cd release
+../configure  --with-x --with-readline=yes --disable-debug
+sudo make
+sudo make install
+```
+
+**magic**
+```
+sudo apt-get install m4
+sudo apt-get install tcsh
+sudo apt-get install csh
+sudo apt-get install libx11-dev
+sudo apt-get install tcl-dev tk-dev
+sudo apt-get install libcairo2-dev
+sudo apt-get install mesa-common-dev libglu1-mesa-dev
+sudo apt-get install libncurses-dev
+git clone https://github.com/RTimothyEdwards/magic
+cd magic
+./configure
+sudo make
+sudo make install
+```
+
+**OpenLANE**
+```
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt install -y build-essential python3 python3-venv python3-pip make git
+
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt update
+sudo apt install docker-ce docker-ce-cli containerd.io
+sudo docker run hello-world
+sudo groupadd docker
+sudo usermod -aG docker $USER
+sudo reboot 
+# After reboot
+docker run hello-world (should show you the output under 'Example Output' in https://hub.docker.com/_/hello-world)
+
+- To install the PDKs and Tools
+cd $HOME
+git clone https://github.com/The-OpenROAD-Project/OpenLane
+cd OpenLane
+make
+make test
+```
+
+### **2. Invoke Openlane**
 
 ![Screenshot from 2023-11-03 12-57-30](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/85312f90-3a8d-4572-a937-c42de2acb338)
 
-### **2. Synthesis**
+### **3. Synthesis**
 
 ![Screenshot from 2023-11-03 12-59-04](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/ade10fd3-09bb-4b9e-bfbf-aba48c41d906)
 
@@ -163,7 +225,7 @@ Area Report
 ![Screenshot from 2023-11-03 14-39-23](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/e644eb2f-2a56-40b2-afc6-d8701c291951)
 
 
-### **3. Floorplan**
+### **4. Floorplan**
 
 ![Screenshot from 2023-11-03 12-59-24](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/17c94031-0316-479a-9633-0a312b04a978)
 
@@ -174,7 +236,7 @@ $ magic -T /home/poojar/OpenLane/vsdstdcelldesign/libs/sky130A.tech lef read /ho
 
 ![Screenshot from 2023-11-03 13-04-37](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/4e37b749-c731-413e-a825-4dbafebc4282)
 
-### **4. Placement**
+### **5. Placement**
 
 ![Screenshot from 2023-11-03 13-05-49](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/df657263-8147-4134-b355-ca2ad6e1b5d8)
 
@@ -185,7 +247,7 @@ $ magic -T /home/poojar/OpenLane/vsdstdcelldesign/libs/sky130A.tech lef read /ho
 
 ![Screenshot from 2023-11-03 13-10-13](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/c1ae552e-d02b-4f1b-9a2b-fdd0c2a24b3a)
 
-### **5. CTS**
+### **6. CTS**
 
 ![Screenshot from 2023-11-03 13-15-20](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/eaa896f6-3d02-467c-aa60-2bf83f94f149)
 
@@ -218,7 +280,7 @@ $ magic -T /home/poojar/OpenLane/vsdstdcelldesign/libs/sky130A.tech lef read /ho
 ![Screenshot from 2023-11-03 18-41-11](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/2a22fb80-e8c2-4eab-94dd-1b67fae247a9)
 
 
-### **6. Routing**
+### **7. Routing**
 
 ![Screenshot from 2023-11-03 13-37-54](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/2d6b010b-e8cc-4f09-9b7b-61fc6721f666)
 
