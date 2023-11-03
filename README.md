@@ -12,8 +12,8 @@ II. [**RTL Design and Synthesis**](#ii-rtl-design-and-synthesis)
   3. [Synthesis](#synthesis)  
   4. [Gate Level simulation](#gate-level-simulation)
      
-III. [**PHYSICAL DESIGN FROM NETLIST TO GDSII**]
-  1. Invoke OpenLane
+III. [**PHYSICAL DESIGN FROM NETLIST TO GDSII**](#iii-physical-design-from-netlist-to-gdsii)
+  1. Invoke OpenLane(#invoke-openlane)
   2. Synthesis
   3. Floorplan
   4. Placement
@@ -149,7 +149,7 @@ $ gtkwave lifo_out.vcd
 
 ## **III. Physical Design from Netlist to GDSII**
 
-### **Invoke Opnelane**
+### **Invoke Openlane**
 
 ![Screenshot from 2023-11-03 12-57-30](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/85312f90-3a8d-4572-a937-c42de2acb338)
 
