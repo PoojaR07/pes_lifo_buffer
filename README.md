@@ -16,8 +16,9 @@ III. [**PHYSICAL DESIGN FROM NETLIST TO GDSII**](#iii-physical-design-from-netli
   1. [Invoke OpenLane](#1-invoke-openlane)
   2. [Synthesis](#2-synthesis)
   3. [Floorplan](#3-floorplan)
-  4. Placement
-  5. CTS
+  4. [Placement](#4-placement)
+  5. [CTS](#5-CTS)
+  6. [Routing](#6-routing)
 
 ## **I. Introduction**   
 
@@ -159,9 +160,10 @@ $ gtkwave lifo_out.vcd
 
 Area Report
 
-![Screenshot from 2023-11-03 14-30-19](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/3249fb03-e079-4466-a5b5-02e5f21d8068)
+![Screenshot from 2023-11-03 14-39-23](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/e644eb2f-2a56-40b2-afc6-d8701c291951)
 
-### ***3. Floorplan**
+
+### **3. Floorplan**
 
 ![Screenshot from 2023-11-03 12-59-24](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/17c94031-0316-479a-9633-0a312b04a978)
 
@@ -171,3 +173,46 @@ $ magic -T /home/poojar/OpenLane/vsdstdcelldesign/libs/sky130A.tech lef read /ho
 ![Screenshot from 2023-11-03 13-04-15](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/6eb03eea-0ec8-491c-a39c-1d8ad2e2b88a)
 
 ![Screenshot from 2023-11-03 13-04-37](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/4e37b749-c731-413e-a825-4dbafebc4282)
+
+### **4. Placement**
+
+![Screenshot from 2023-11-03 13-05-49](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/df657263-8147-4134-b355-ca2ad6e1b5d8)
+
+```
+$ magic -T /home/poojar/OpenLane/vsdstdcelldesign/libs/sky130A.tech lef read /home/poojar/OpenLane/LIFO/runs/RUN_2023.11.03_07.14.55/tmp/merged.max.lef def lifo.def &
+```
+![Screenshot from 2023-11-03 13-10-00](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/032faf38-3aa3-40ef-aa1a-dc6bf7cb225e)
+
+![Screenshot from 2023-11-03 13-10-13](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/c1ae552e-d02b-4f1b-9a2b-fdd0c2a24b3a)
+
+### **5. CTS**
+
+![Screenshot from 2023-11-03 13-15-20](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/eaa896f6-3d02-467c-aa60-2bf83f94f149)
+
+Reports Generated
+
+![Screenshot from 2023-11-03 13-22-23](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/95b739e1-1c20-4f38-8ac9-4eae18d54ed3)
+
+![Screenshot from 2023-11-03 13-27-46](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/1bc3b90c-f5a2-49f9-a797-79f66b67561b)
+
+![Screenshot from 2023-11-03 13-28-10](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/4dbfa7cd-fd9f-4b4e-8d00-88c1576bb355)
+
+![Screenshot from 2023-11-03 13-29-18](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/4ad7363b-0337-40ed-b540-45a623443e1c)
+
+![Screenshot from 2023-11-03 13-29-38](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/f4ab2026-7521-4116-b3ca-17d72a2dff0b)
+
+![Screenshot from 2023-11-03 13-32-09](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/14c00ea5-ed40-44ae-b9d2-9eb6d3df27ae)
+
+![Screenshot from 2023-11-03 13-32-55](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/1500eedf-179b-42ff-ad46-015f841654a6)
+
+### **6. Routing**
+
+![Screenshot from 2023-11-03 13-37-54](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/2d6b010b-e8cc-4f09-9b7b-61fc6721f666)
+
+```
+$ magic -T /home/poojar/OpenLane/vsdstdcelldesign/libs/sky130A.tech lef read /home/poojar/OpenLane/LIFO/runs/RUN_2023.11.03_07.14.55/tmp/merged.max.lef def lifo.def &
+```
+
+![Screenshot from 2023-11-03 13-45-36](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/45c002bb-d141-46bc-bc89-20c9d6edf705)
+
+![Screenshot from 2023-11-03 13-45-55](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/870df1bc-086f-429c-9f3b-dc759b56c8ce)
