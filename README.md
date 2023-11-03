@@ -207,7 +207,7 @@ $ magic -T /home/poojar/OpenLane/vsdstdcelldesign/libs/sky130A.tech lef read /ho
 
 ![Screenshot from 2023-11-03 18-40-02](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/402dd33a-66ca-4168-8e13-84d2095cd0cf)
 
-Skew Report
+#### **Skew Report**
 
 ![Screenshot from 2023-11-03 18-40-21](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/0afe9cee-eedb-460d-8f3a-344ff2671bd6)
 
