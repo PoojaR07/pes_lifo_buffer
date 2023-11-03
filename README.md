@@ -203,7 +203,8 @@ Reports Generated
 
 ![Screenshot from 2023-11-03 13-32-09](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/14c00ea5-ed40-44ae-b9d2-9eb6d3df27ae)
 
-![Screenshot from 2023-11-03 13-32-55](https://github.com/PoojaR07/pes_lifo_buffer/assets/135737910/1500eedf-179b-42ff-ad46-015f841654a6)
+Power report
+
 
 ### **6. Routing**
 
